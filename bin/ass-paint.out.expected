@@ -1,0 +1,27 @@
+ass_paint.ml - calling Ass.go()
+Ass.go()...
+Test_show_some_things.assemble()...
+- hardcoded to use paint example 
+- writing code to stdout...
+00 - 1000111100100001 -- 8f21 -- (Op Mode2 ((target A) (oper (H H H H)) (primary A) (sec (Xo 3))))
+01 - 1000000000100000 -- 8020 -- (Op Mode2 ((target A) (oper (L L L L)) (primary A) (sec (Xo 2))))
+02 - 1000000000011111 -- 801f -- (Op Mode2 ((target A) (oper (L L L L)) (primary A) (sec (Xo 1))))
+03 - 1000000000011110 -- 801e -- (Op Mode2 ((target A) (oper (L L L L)) (primary A) (sec (Xo 0))))
+04 - 1000111100111100 -- 8f3c -- (Op Mode2 ((target A) (oper (H H H H)) (primary A) (sec (G 8))))
+05 - 1000111100110000 -- 8f30 -- (Op Mode2 ((target A) (oper (H H H H)) (primary A) (sec Ga)))
+06 - 1000111100101110 -- 8f2e -- (Op Mode2 ((target A) (oper (H H H H)) (primary A) (sec Btn_a__G_wr)))
+07 - 0110111100000000 -- 6f00 -- (Op Mode1 ((target C) (oper (H H H H)) (primary A) (sec (M 0))))
+08 - 1110011010110100 -- e6b4 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 0))))
+09 - 1110011010110101 -- e6b5 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 1))))
+10 - 1110011010110110 -- e6b6 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 2))))
+11 - 1110011010110111 -- e6b7 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 3))))
+12 - 1110011010111000 -- e6b8 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 4))))
+13 - 1110011010111001 -- e6b9 -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 5))))
+14 - 1110011010111010 -- e6ba -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 6))))
+15 - 1110011010111011 -- e6bb -- (Op Mode3 ((target C) (oper (L H H L)) (primary C) (sec (G 7))))
+16 - 0111001110000000 -- 7380 -- (Op Mode1 ((target D) (oper (L L H H)) (primary C) (sec (M 0))))
+17 - 0010000000000110 -- 2006 -- (Branch (User 6))
+18 - 0111111100000000 -- 7f00 -- (Op Mode1 ((target D) (oper (H H H H)) (primary A) (sec (M 0))))
+19 - 0010000000010011 -- 2013 -- (Branch (User 19))
+- checking round-trip: ok
+- writing bitchild program to: paint.prog

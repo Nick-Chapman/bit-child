@@ -1,0 +1,43 @@
+
+(alias
+ ((name DEFAULT) 
+  (deps (
+	 paint.prog
+	 sim-paint.out
+	 ))))
+
+
+(executables
+ ((names (ass_paint sim_paint))
+  (libraries (core bitchild_lib))))
+
+
+(rule 
+ ((targets (paint.prog ass-paint.out))
+  (deps (ass_paint.exe))
+  (action (bash "./ass_paint.exe > ass-paint.out"))))
+
+
+(rule 
+ ((targets (sim-paint.out))
+  (deps (sim_paint.exe paint.prog))
+  (action (bash "./sim_paint.exe > sim-paint.out"))))
+
+
+(alias
+ ((name DEFAULT)
+  (deps (paint.prog.expected paint.prog))
+  (action (bash "diff paint.prog.expected paint.prog"))))
+
+(alias
+ ((name DEFAULT)
+  (deps (ass-paint.out.expected ass-paint.out))
+  (action (bash "diff ass-paint.out.expected ass-paint.out"))))
+
+(alias
+ ((name DEFAULT)
+  (deps (sim-paint.out.expected sim-paint.out))
+  (action (bash "diff \
+<(cat sim-paint.out.expected | sed 's/duration=.*ms//') \
+<(cat sim-paint.out          | sed 's/duration=.*ms//') \
+"))))
